@@ -3,7 +3,7 @@
 1. Cloner dépôt :
 
 ```
-git clone https://github.com/osaris/laravel-todomvc10.git
+git clone https://github.com/osaris/laravel-exa-frm-php-23.git
 ```
 
 2. Installer laravel sail :
