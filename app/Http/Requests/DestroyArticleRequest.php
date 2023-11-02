@@ -12,7 +12,12 @@ class DestroyArticleRequest extends FormRequest
     public function authorize(): bool
     {
         $article = $this->route('article');
-        return $article->canDestroy();
+        if(!$article->canDestroy()){
+            throw new \Illuminate\Http\Exceptions\HttpResponseException(
+                redirect()->back()->with('error', 'Stock must be 0 before deletion')
+            );
+        }
+        return true;
     }
 
     /**

@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use Illuminate\Http\Request;
-use App\Http\Requests\DestroyArticleRequest;
 
 class ArticleApiController extends Controller
 {
