@@ -19,5 +19,5 @@ use App\Http\Controllers\ArticleApiController;
 Route::name('api.')->group(function() {
 
     Route::get('/articles/{article}', [ArticleApiController::class, 'show'])->name('articles.show');
-
+    Route::delete('/articles/{article}', [ArticleApiController::class, 'destroy'])->name('articles.destroy');
 });
