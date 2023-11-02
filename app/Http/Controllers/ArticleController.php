@@ -15,7 +15,7 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        return view('articles.index', ['articles' => Article::all() ,'stockAmount' => Article::where('quantity','>',0)->count()]);
+        return view('articles.index', ['articles' => Article::all() ,'stockAmount' => Article::sum('quantity')]);
     }
 
     /**
