@@ -37,6 +37,6 @@ class Exercise02Test extends TestCase
         $response = $this->put(route('articles.update', ['article' => $a,
                                                          'reference' => 'Very long reference']));
 
-        $response->assertRedirectContains('Very long reference');
+        $this->followRedirects($response)->assertSee('Very long reference');
     }
 }

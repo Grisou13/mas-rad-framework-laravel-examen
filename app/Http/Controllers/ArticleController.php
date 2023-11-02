@@ -22,7 +22,7 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        return view('articles.create');
+        return view('articles.form', ['article' => new Article()]);
     }
 
     /**
@@ -30,7 +30,7 @@ class ArticleController extends Controller
      */
     public function store(StoreArticleRequest $request)
     {
-        Article::create($request->except('_token', '_method'));
+        $new = Article::create($request->except('_token', '_method'));
         return redirect()->route('articles.index')->with('success', 'Article created');
     }
 
@@ -47,15 +47,16 @@ class ArticleController extends Controller
      */
     public function edit(Article $article)
     {
-        //
+        return view('articles.form', ['article' => $article]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Article $article)
+    public function update(StoreArticleRequest $request, Article $article)
     {
-        //
+        $update = $article->update($request->except('_token', '_method'));
+        return redirect()->route('articles.index')->with('success', 'Article Edited');
     }
 
     /**

@@ -32,8 +32,8 @@
                         <form method="POST" action="{{ route('articles.destroy', $article) }}">
                             @method('DELETE')
                             @csrf
-                            <a class="btn btn-secondary" href="#TODO" role="button"><i class="bi bi-plus-lg"></i> Stock</a>
-                            <a class="btn btn-secondary" href="#TODO" role="button">Edit</a>
+                            <a class="btn btn-secondary" href="{{ route('articles.edit', $article) }}" role="button"><i class="bi bi-plus-lg"></i> Stock</a>
+                            <a class="btn btn-secondary" href="{{ route('articles.edit', $article) }}" role="button">Edit</a>
                             <button class="btn btn-danger" type="submit">Delete</button>
                         </form>
                     </div>
