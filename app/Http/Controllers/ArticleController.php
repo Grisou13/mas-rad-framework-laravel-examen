@@ -60,6 +60,13 @@ class ArticleController extends Controller
         return redirect()->route('articles.index')->with('success', 'Article Edited');
     }
 
+    public function incrementStock(Article $article)
+    {
+        $article->incrementStock();
+        $article->save();
+        return redirect()->route('articles.index')->with('success', 'Stock increased !');
+    }
+
     /**
      * Remove the specified resource from storage.
      */

@@ -24,4 +24,8 @@ class Article extends Model
     {
         return $this->quantity <= 0;
     }
+    function incrementStock()
+    {
+        $this->quantity += 1;
+    }
 }

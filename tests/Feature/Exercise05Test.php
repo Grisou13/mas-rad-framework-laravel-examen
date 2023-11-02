@@ -15,7 +15,7 @@ class Exercise05Test extends TestCase
     {
         $a = Article::create(['reference' => 'test',
                               'quantity'  => 0]);
-                              
+
         $response = $this->put(route('articles.stock', $a));
 
         $a = Article::find($a->id);
@@ -27,9 +27,8 @@ class Exercise05Test extends TestCase
     {
         $a = Article::create(['reference' => 'test',
                               'quantity'  => 0]);
-                              
-        $response = $this->put(route('articles.stock', $a));
 
-        $response->assertRedirectContains('Stock increased !');
+        $response = $this->put(route('articles.stock', $a));
+        $this->followRedirects($response)->assertSee('Stock increased !');
     }
 }
