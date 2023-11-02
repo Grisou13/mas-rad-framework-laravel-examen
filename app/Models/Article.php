@@ -14,4 +14,14 @@ class Article extends Model
     protected $attributes = [
         'quantity' => 0,
     ];
+
+    function canDestroy()
+    {
+        return $this->hasNoMoreStock();
+    }
+
+    function hasNoMoreStock()
+    {
+        return $this->quantity <= 0;
+    }
 }

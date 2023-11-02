@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use App\Http\Requests\StoreArticleRequest;
+use App\Http\Requests\DestroyArticleRequest;
 
 use Illuminate\Http\Request;
 
@@ -14,7 +15,7 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        return view('articles.index', ['articles' => Article::all()]);
+        return view('articles.index', ['articles' => Article::all() ,'stockAmount' => Article::where('quantity','>',0)->count()]);
     }
 
     /**
@@ -62,7 +63,7 @@ class ArticleController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Article $article)
+    public function destroy(DestroyArticleRequest $request, Article $article)
     {
         $article->delete();
         return redirect()->route('articles.index')->with('success', 'Article deleted successfully');
