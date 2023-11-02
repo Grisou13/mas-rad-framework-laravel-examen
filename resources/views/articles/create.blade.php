@@ -12,12 +12,16 @@
                     <input type="text" class="form-control" id="reference" name="reference" value="{{ old('reference') }}">
                     @if($errors->has('reference'))
                         <div class="text-danger">{{ $errors->first('reference') }}</div>
-                    @endif                    
+                    @endif
                     <label for="quantity" class="form-label">Quantity</label>
                     <input type="text" class="form-control" id="quantity" name="quantity" value="{{ old('quantity') }}">
+
+                    <label for="nota" class="form-label">Nota</label>
+                    <input type="text" class="form-control" id="nota" name="nota" value="{{ old('nota') }}">
+
                     @if($errors->has('quantity'))
                         <div class="text-danger">{{ $errors->first('quantity') }}</div>
-                    @endif                          
+                    @endif
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>

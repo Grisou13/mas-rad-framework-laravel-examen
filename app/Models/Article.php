@@ -9,7 +9,7 @@ class Article extends Model
 {
     use HasFactory;
 
-    var $fillable = ['reference', 'quantity'];
+    var $fillable = ['reference', 'quantity', 'nota'];
 
     protected $attributes = [
         'quantity' => 0,

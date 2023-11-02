@@ -23,7 +23,8 @@ class StoreArticleRequest extends FormRequest
     {
         return [
             'reference' => 'required|min:5',
-            'quantity' => 'numeric'
+            'quantity' => 'numeric',
+            'nota' => 'nullable'
         ];
     }
 }

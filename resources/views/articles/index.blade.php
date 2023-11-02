@@ -15,6 +15,7 @@
                 <th scope="col">#</th>
                 <th scope="col">Reference</th>
                 <th scope="col">Stock</th>
+                <th scope="col">Nota</th>
                 <th scope="col"></th>
             </tr>
         </thead>
@@ -24,6 +25,8 @@
                 <th scope="row">{{ $article->id }}</th>
                 <td>{{ $article->reference }}</td>
                 <td>{{ $article->quantity }}</td>
+                <td>{{ $article->nota }}</td>
+
                 <td class="text-end">
                     <div class="d-inline-block">
                         <form method="POST" action="{{ route('articles.destroy', $article) }}">
