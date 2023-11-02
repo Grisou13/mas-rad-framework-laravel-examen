@@ -44,8 +44,8 @@
         <tfoot>
             <tr>
                 <th>Total</th>
-                <th>{{ $articles->count() }} article(s)</th>
-                <th>{{ $stockAmount }} article(s) in stock</th>
+                <th>{{ $articles->count() }} {{Str::plural('article', $articles->count())}}</th>
+                <th>{{ $stockAmount }} {{Str::plural('article', $stockAmount)}} in stock</th>
                 <th></th>
             </tr>
         </tfoot>
